@@ -31,7 +31,7 @@ const isOnline = async () => {
     // Si esto pasara, responderia el cache del browser y no el resultado de tener conexion
     const response = await fetch('https://code.jquery.com/jquery-3.6.0.slim.min.js', {cache: "no-store"});
     
-    if (response.url == "http://127.0.0.1:5500/offline.html"){
+    if (response.url == "https://find-artist-app.vercel.app/offline.html"){
       return false;
     }
     
