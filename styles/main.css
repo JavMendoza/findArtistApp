@@ -216,3 +216,11 @@ a:hover {
 .offline .juego-ahorcado {
   display: block;
 }
+
+.ahorcado-img {
+  display: none;
+}
+
+.ahorcado-img.show {
+  display: block;
+}

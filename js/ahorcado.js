@@ -5,7 +5,7 @@ let errors = 1;
 
 const $inputLetter = document.querySelector('.letter-input');
 const $searchedWords = document.querySelector('.searched-words');
-const $imgAhorcado = document.querySelector('.ahorcado-img');
+const $imgsAhorcado = document.querySelectorAll('.ahorcado-img');
 const $gameover = document.querySelector('.gameover');
 const $gamesuccess = document.querySelector('.gamesuccess');
 const $tryAgain = document.querySelector('.try-again');
@@ -69,7 +69,12 @@ function fillAhorcadoWithSuccess(indexes, letter) {
 
 function fillAhorcadoWithError() {
   errors++;
-  $imgAhorcado.src = `./imgs/ahorcado/step${errors}.png`;
+  $imgsAhorcado.forEach((img, index) => {
+    img.classList.remove('show');
+    if (index === errors-1) {
+      img.classList.add('show');
+    }
+  });
   if (errors === 7) {
     ahorcadoEndedWithError();
   }
@@ -103,7 +108,12 @@ function resetAhorcado() {
   $tryAgain.classList.remove('show');
   aciertos = 0;
   errors = 1;
-  $imgAhorcado.src = `./imgs/ahorcado/step${errors}.png`;
+  $imgsAhorcado.forEach((img, index) => {
+    img.classList.remove('show');
+    if (index === 0) {
+      img.classList.add('show');
+    }
+  });
   $searchedWords.innerHTML = '';
   createAhorcado();
 }
