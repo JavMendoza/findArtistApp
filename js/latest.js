@@ -31,8 +31,8 @@ function showArtistsInDOM(artists) {
           <li><strong>Website:</strong> <a href="http://${artist.strWebsite}" target="_blank">${artist.strWebsite}</a></li>
         </ul>
         <ul class="artist-list artist-social-networks">
-          <li><a href="http://${artist.strFacebook}" target="_blank"><img src="./imgs/facebook.png" alt="Facebook logo"></a></li>
-          <li><a href="http://${artist.strTwitter}" target="_blank"><img src="./imgs/twitter.png" alt="Twitter logo"></a></li>
+          <li><a href="http://${artist.strFacebook}" target="_blank"><img src="./imgs/face.png" alt="Facebook logo"></a></li>
+          <li><a href="http://${artist.strTwitter}" target="_blank"><img src="./imgs/twit.png" alt="Twitter logo"></a></li>
         </ul>
         <p class="lead artist-bio">${artist.strBiographyEN.slice(0, 550)}...</p>
       </div>
