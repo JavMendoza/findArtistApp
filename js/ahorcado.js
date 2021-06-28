@@ -1,0 +1,111 @@
+const bands = ['riverside', 'divididos', 'metallica', 'opeth', 'plini', 'coldplay', 'acdc', 'u2', 'paramore', 'eminem'];
+let artistToFind = '';
+let aciertos = 0;
+let errors = 1;
+
+const $inputLetter = document.querySelector('.letter-input');
+const $searchedWords = document.querySelector('.searched-words');
+const $imgAhorcado = document.querySelector('.ahorcado-img');
+const $gameover = document.querySelector('.gameover');
+const $gamesuccess = document.querySelector('.gamesuccess');
+const $tryAgain = document.querySelector('.try-again');
+
+window.addEventListener('load', () => {
+  createAhorcado();
+});
+
+$tryAgain.addEventListener('click', () => {
+  resetAhorcado();
+});
+
+function createAhorcado() {
+  const posRan = Math.floor(Math.random() * 10);
+  artistToFind = bands[posRan];
+  createEmptySpaces(artistToFind);
+}
+
+function createEmptySpaces(artist) {
+  for (let i = 0; i < artist.length; i++) {
+    const li = document.createElement('li');
+    $searchedWords.appendChild(li);
+  }
+}
+
+$inputLetter.addEventListener('input', e => {
+  if (e.target.value !== '' && errors < 7 && aciertos !== artistToFind.length) {
+    playAhorcado(e.target.value);
+  }
+});
+
+function findIndexesInArtist(word) {
+  let indexes = [];
+  let pos = artistToFind.indexOf(word);
+  while ( pos != -1 ) {
+    indexes.push(pos);
+    pos = artistToFind.indexOf(word, pos + 1);
+  }
+  return indexes;
+}
+
+function playAhorcado(letter) {
+  const indexes = findIndexesInArtist(letter);
+  if (indexes.length > 0) {
+    fillAhorcadoWithSuccess(indexes, letter);
+  } else {
+    fillAhorcadoWithError();
+  }
+}
+
+function fillAhorcadoWithSuccess(indexes, letter) {
+  const $lis = $searchedWords.querySelectorAll('li');
+  indexes.forEach(index => {
+    $lis[index].innerHTML = letter;
+    aciertos++;
+  });
+  if (aciertos === artistToFind.length) {
+    ahorcadoEndedWithSuccess();
+  }
+}
+
+function fillAhorcadoWithError() {
+  errors++;
+  $imgAhorcado.src = `./imgs/ahorcado/step${errors}.png`;
+  if (errors === 7) {
+    ahorcadoEndedWithError();
+  }
+}
+
+function ahorcadoEndedWithError() {
+  $inputLetter.disabled = true;
+  $gameover.classList.add('show');
+  $tryAgain.classList.add('show');
+  revealArtist();
+}
+
+function revealArtist() {
+  const $lis = $searchedWords.querySelectorAll('li');
+  $lis.forEach((li, index) => {
+    li.innerHTML = artistToFind[index];
+  });
+}
+
+function ahorcadoEndedWithSuccess() {
+  $inputLetter.disabled = true;
+  $gamesuccess.classList.add('show');
+  $tryAgain.classList.add('show');
+}
+
+function resetAhorcado() {
+  $inputLetter.disabled = false;
+  $inputLetter.value = '';
+  $gameover.classList.remove('show');
+  $gamesuccess.classList.remove('show');
+  $tryAgain.classList.remove('show');
+  aciertos = 0;
+  errors = 1;
+  $imgAhorcado.src = `./imgs/ahorcado/step${errors}.png`;
+  $searchedWords.innerHTML = '';
+  createAhorcado();
+}
+
+

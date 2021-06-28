@@ -1,0 +1,218 @@
+body {
+  font-family: 'latoregular', sans-serif;
+  background-color: #f7b267;
+}
+
+.jumbotron {
+  background-color: #f79d65;
+}
+
+nav {
+  background-color: #f25c54;
+}
+
+h1 {
+  font-size: 25px;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-family: 'latoblack', sans-serif;
+  font-size: 50px;
+}
+
+h3 {
+  font-family: 'latoblack', sans-serif;
+}
+
+a:hover {
+  color: #fff;
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-brand:hover {
+  font-family: 'latoblack', sans-serif;
+  color: #fff;
+  font-size: 25px;
+}
+
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-nav .active > .nav-link, 
+.navbar-light .navbar-nav .nav-link.active, 
+.navbar-light .navbar-nav .nav-link.show, 
+.navbar-light .navbar-nav .show > .nav-link {
+  font-family: 'latobold', sans-serif;
+  color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.search-btn,
+.try-again {
+  font-family: 'latobold', sans-serif;
+  text-transform: uppercase;
+  background-color: #f25c54;
+  color: #fff;
+  margin: 30px auto 0;
+  display: block;
+}
+
+.featurette-divider {
+  margin: 5rem 0;
+}
+
+.navbar-toggler {
+  background: #fff;
+}
+
+.artist-general-info {
+  display: none;
+}
+
+.artist-general-info.show {
+  display: flex;
+}
+
+.artist-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.artist-info li {
+  margin: 0 30px 0 0;
+  font-style: italic;
+  font-size: 15px;
+}
+
+.artist-social-networks li {
+  margin: 0 20px 0 0;
+}
+
+.artist-info li strong {
+  font-family: 'latobold', sans-serif;
+}
+
+.artist-bio {
+  font-size: 15px;
+}
+
+.artist-image img {
+  width: 100%;
+  max-height: 450px;
+  object-fit: scale-down;
+  margin-bottom: 20px;
+}
+
+.artist-not-found,
+.no-artists-yet {
+  display: none;
+  font-family: 'latobold', sans-serif;
+  margin-top: 10px;
+}
+
+.artist-not-found.show {
+  display: inline-block;
+}
+
+.no-artists-yet.show {
+  display: block;
+}
+
+.artist-latest {
+  border-top: 1px solid #333;
+  padding: 40px 0;
+}
+
+.artist-latest h2,
+.no-artists-yet {
+  font-size: 30px;
+}
+
+.heading-container {
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.heading-container h2 {
+  font-size: 40px;
+}
+
+.heading-container h2.hidden {
+  display: none;
+}
+
+.alert-offline {
+  display: none;
+}
+
+
+.letter-input {
+  width: 50px;
+  margin-bottom: 20px;
+}
+
+.searched-words {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin: 30px 0;
+}
+
+.searched-words li {
+  font-family: 'latobold', sans-serif;
+  font-size: 20px;
+  border-bottom: 2px solid #000;
+  margin: 0 14px 0 0;
+  min-width: 32px;
+  min-height: 32px;
+  text-align: center;
+}
+
+.juego-ahorcado {
+  display: none;
+}
+
+.juego-ahorcado.show {
+  display: block;
+}
+
+.juego-ahorcado h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.letter-to-search {
+  margin: 20px 0;
+}
+
+.gameover,
+.gamesuccess,
+.try-again {
+  display: none;
+  width: 130px;
+}
+
+.gameover.show,
+.gamesuccess.show,
+.try-again.show {
+  display: inline-block;
+}
+
+.try-again {
+  margin: 0 30px;
+}
+
+.offline .alert-offline {
+  display: block;
+}
+
+.offline .juego-ahorcado {
+  display: block;
+}

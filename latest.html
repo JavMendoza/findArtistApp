@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="manifest" href="./manifest.json">
+    <title>JAVIER EUGENIO MENDOZA GODANI | DW3A PWA (W2035)</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <h1><a class="navbar-brand" href="index.html">Find Your Artist Info</a></h1>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="latest.html">Latest Searched Artists</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main">
+      <div class="container marketing latest-artists">
+        <div class="row heading-container">
+          <h2 class="heading-latest">Your Latest 10 searched artists</h2>
+          <div class="alert alert-danger alert-offline" role="alert">
+            You are currently offline
+          </div>
+          <p class="no-artists-yet">There is nothing to show, start searching now!</p>
+        </div>
+      </div>
+    </main>
+
+    <script src="./js/jquery-3.2.1.slim.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="js/latest.js"></script>
+    <script src="js/register-sw.js"></script>
+  </body>
+</html>
