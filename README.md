@@ -1,7 +1,7 @@
 # Find your music artist
 
-Nombre: Javier Eugenio Mendoza Godani
-Comision: DWN3A - W2035
+- Javier Eugenio Mendoza Godani
+- Comision DWN3A - W2035
 
 No hay ninguna instruccion para correr la app.
 El camino elegido fue el B.
