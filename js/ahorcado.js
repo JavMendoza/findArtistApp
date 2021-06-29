@@ -32,17 +32,20 @@ function createEmptySpaces(artist) {
 }
 
 $inputLetter.addEventListener('input', e => {
-  if (e.target.value !== '' && errors < 7 && aciertos !== artistToFind.length) {
+  if (e.target.value.length === 1 && errors < 7 && aciertos !== artistToFind.length) {
     playAhorcado(e.target.value.toLowerCase());
+  }
+  if (e.target.value.length > 1) {
+    e.target.value = e.target.value[0];
   }
 });
 
-function findIndexesInArtist(word) {
+function findIndexesInArtist(letter) {
   let indexes = [];
-  let pos = artistToFind.indexOf(word);
+  let pos = artistToFind.indexOf(letter);
   while ( pos != -1 ) {
     indexes.push(pos);
-    pos = artistToFind.indexOf(word, pos + 1);
+    pos = artistToFind.indexOf(letter, pos + 1);
   }
   return indexes;
 }
@@ -59,8 +62,10 @@ function playAhorcado(letter) {
 function fillAhorcadoWithSuccess(indexes, letter) {
   const $lis = $searchedWords.querySelectorAll('li');
   indexes.forEach(index => {
+    if ($lis[index].innerHTML === '') {
+      aciertos++;
+    }
     $lis[index].innerHTML = letter;
-    aciertos++;
   });
   if (aciertos === artistToFind.length) {
     ahorcadoEndedWithSuccess();
