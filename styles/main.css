@@ -226,3 +226,11 @@ a:hover {
 .ahorcado-img.show {
   display: block;
 }
+
+@media (max-width: 576px) {
+  .searched-words li {
+    min-width: 22px;
+    min-height: 22px;
+    margin: 0 10px 0 0;
+  }
+}
