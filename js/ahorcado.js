@@ -33,7 +33,7 @@ function createEmptySpaces(artist) {
 
 $inputLetter.addEventListener('input', e => {
   if (e.target.value !== '' && errors < 7 && aciertos !== artistToFind.length) {
-    playAhorcado(e.target.value);
+    playAhorcado(e.target.value.toLowerCase());
   }
 });
 

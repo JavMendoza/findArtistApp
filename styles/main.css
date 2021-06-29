@@ -130,6 +130,7 @@ a:hover {
 .artist-latest h2,
 .no-artists-yet {
   font-size: 30px;
+  text-align: center;
 }
 
 .heading-container {
@@ -141,6 +142,7 @@ a:hover {
 
 .heading-container h2 {
   font-size: 40px;
+  text-align: center;
 }
 
 .heading-container h2.hidden {
